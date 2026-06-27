@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Presentación</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_presentacion.css') }}">
+
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('presentacion') }}">Presentación</a></li>
+            <li><a href="{{ url_for('eventos') }}">Eventos</a></li>
+            <li><a href="{{ url_for('crear_evento_get') }}">Crear Evento</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="presentation">
+        <!-- Texto de bienvenida como widget -->
+        <div class="widget">
+            <h1>Bienvenido al Museo de Astrofísica</h1>
+            <p>
+                Explora el universo desde una perspectiva única.  
+                Descubre nebulosas, asteroides y satélites en un recorrido que combina ciencia y arte.
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>

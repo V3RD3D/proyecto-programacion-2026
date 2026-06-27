@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Eventos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_index.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('presentacion') }}">Presentación</a></li>
+            <li><a href="{{ url_for('eventos') }}">Eventos</a></li>
+            <li><a href="{{ url_for('crear_evento_get') }}">Crear Evento</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2>Lista de Eventos</h2>
+
+        {% if events %}
+            {% for event in events %}
+                <div class="event-card">
+                    <h3>{{ event.name }}</h3>
+                    <p><strong>Inicio:</strong> {{ event.init.strftime("%d/%m/%Y %H:%M") }}</p>
+                    <p><strong>Fin:</strong> {{ event.end.strftime("%d/%m/%Y %H:%M") }}</p>
+                    <p><strong>Capacidad:</strong> {{ event.capacity }}</p>
+                    <p><strong>Lugar:</strong> {{ event.place.name }}</p>
+
+                    <!-- Botones de acción -->
+                    <form action="{{ url_for('info_evento', event_id=loop.index0) }}" method="get" style="display:inline;">
+                        <button class="block-button" type="submit">Info</button>
+                    </form>
+
+                    <form action="{{ url_for('eliminar_evento', event_id=loop.index0) }}" method="post" style="display:inline;">
+                        <input type="password" name="contraseña" placeholder="Contraseña" required>
+                        <button class="block-button" type="submit">Eliminar</button>
+                    </form>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>No hay eventos registrados.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

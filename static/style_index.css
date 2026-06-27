@@ -1,0 +1,102 @@
+/* --- Estilo global para index --- */
+body {
+    background: url("/static/photo/comet.jpg") no-repeat    ;
+    background-size: cover;
+    color: #e5e5e5; /* gris claro metálico */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c); /* degradado oscuro */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px #2563eb, 0 0 25px #d4af37; /* azul + dorado cósmico */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* siempre visible */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: #f5f5f5; /* blanco lunar */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar a:hover {
+    color: #d4af37; /* dorado sutil */
+    text-shadow: 0 0 10px #d4af37, 0 0 20px #2563eb;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(40, 40, 40, 0.85); /* gris oscuro translúcido */
+    border: 1px solid #4a5568;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px #4a5568, 0 0 40px #2563eb;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #2563eb;
+}
+
+/* --- Tarjetas de eventos --- */
+.event-card {
+    background: rgba(60, 60, 60, 0.8); /* gris lunar */
+    border: 1px solid #4a5568;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 15px 0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 15px #2563eb, 0 0 25px #d4af37;
+}
+
+/* Botones dentro de las tarjetas */
+.event-card .card-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #2c2c2c, #4a5568);
+    color: #fff;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+}
+
+.event-card .card-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #2563eb, 0 0 25px #d4af37;
+}

@@ -1,0 +1,158 @@
+/* --- Estilo global para crear evento --- */
+body {
+    background: url("/static/photo/moon.jpg") no-repeat ;
+    background-size: cover;
+    color: #e5e5e5; /* gris claro metálico */
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Barra de navegación */
+.navbar {
+    background: linear-gradient(90deg, #1a1a1a, #2c2c2c); /* degradado oscuro */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px #2563eb, 0 0 25px #d4af37; /* azul + dorado cósmico */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* siempre visible */
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: #f5f5f5; /* blanco lunar */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar a:hover {
+    color: #d4af37; /* dorado sutil */
+    text-shadow: 0 0 10px #d4af37, 0 0 20px #2563eb;
+}
+
+/* Contenedor central */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(40, 40, 40, 0.85); /* gris oscuro translúcido */
+    border: 1px solid #4a5568;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px #4a5568, 0 0 40px #2563eb;
+}
+
+/* Títulos */
+h2 {
+    text-align: center;
+    color: #f5f5f5;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #2563eb;
+}
+
+/* --- Bloques de formulario --- */
+.form-block {
+    margin: 20px 0;
+}
+
+.block-label {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #2c2c2c, #4a5568); /* gris metálico */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Inputs y selects */
+input, select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    background: #1a1a1a;
+    color: #e5e5e5;
+    text-align: center;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #2563eb; /* azul cósmico */
+    box-shadow: 0 0 10px #2563eb;
+}
+
+/* Ajustes para datetime-local */
+input[type="datetime-local"] {
+    background: #1a1a1a;
+    color: #e5e5e5;
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1em;
+    text-align: center;
+}
+
+input[type="datetime-local"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 10px #2563eb;
+}
+
+/* Grid para recursos */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.resource-item {
+    background: rgba(60, 60, 60, 0.8); /* gris lunar */
+    border: 1px solid #4a5568;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.resource-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #2563eb, 0 0 25px #d4af37; /* azul + dorado lunar */
+}
+
+/* Botón principal */
+.block-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(90deg, #2c2c2c, #4a5568); /* gris metálico */
+    color: #fff;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.block-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #2563eb, 0 0 40px #d4af37;
+}

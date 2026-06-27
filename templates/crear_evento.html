@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Evento</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style_crear.css') }}">
+</head>
+<body>
+    <!-- Barra de navegación -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="{{ url_for('presentacion') }}">Presentación</a></li>
+            <li><a href="{{ url_for('eventos') }}">Eventos</a></li>
+            <li><a href="{{ url_for('crear_evento_get') }}">Crear Evento</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container">
+        <h2>Crear Evento</h2>
+
+        <form action="{{ url_for('crear_evento_post') }}" method="post">
+
+            <!-- Bloque Nombre -->
+            <div class="form-block">
+                <label class="block-label">Nombre del Evento</label>
+                <input type="text" name="nombre" required>
+            </div>
+
+            <!-- Bloque Contraseña -->
+            <div class="form-block">
+                <label class="block-label">Contraseña</label>
+                <input type="password" name="contraseña" required>
+            </div>
+
+            <!-- Bloque Capacidad -->
+            <div class="form-block">
+                <label class="block-label">Capacidad</label>
+                <input type="number" name="capacidad" min="1" required>
+            </div>
+
+            <!-- Bloque Lugar -->
+            <div class="form-block">
+                <label class="block-label">Lugar</label>
+                <select name="place" required>
+                    {% for esp in espacios %}
+                        <option value="{{ esp.name }}">{{ esp.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <!-- Bloque Fecha/Hora Inicio -->
+            <div class="form-block">
+                <label class="block-label">Fecha y Hora de Inicio</label>
+                <input type="datetime-local" name="inicio" min="{{ current_datetime }}" required>
+            </div>
+
+            <!-- Bloque Fecha/Hora Fin -->
+            <div class="form-block">
+                <label class="block-label">Fecha y Hora de Fin</label>
+                <input type="datetime-local" name="fin" min="{{ current_datetime }}" required>
+            </div>
+
+            <!-- Bloque Objetos -->
+            <div class="form-block">
+                <label class="block-label">Objetos</label>
+                <div class="resource-grid">
+                    {% for obj in objetos %}
+                        <div class="resource-item">
+                            <input type="checkbox" name="object_{{ obj.name }}">
+                            <span>{{ obj.name }}</span>
+                            <input type="number" name="object_qty_{{ obj.name }}" min="1" value="1">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Bloque Personal -->
+            <div class="form-block">
+                <label class="block-label">Personal</label>
+                <div class="resource-grid">
+                    {% for p in personal %}
+                        <div class="resource-item">
+                            <input type="checkbox" name="personal_{{ p.name }}">
+                            <span>{{ p.name }}</span>
+                            <input type="number" name="personal_qty_{{ p.name }}" min="1" value="1">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Botón Crear -->
+            <div class="form-block">
+                <button type="submit" class="block-button">Crear Evento</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
