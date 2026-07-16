@@ -14,5 +14,19 @@
             "Proyector": 1
         },
         "password": "1234"
+    },
+    {
+        "name": "kevin",
+        "init": "2026-07-14T16:00:00",
+        "end": "2026-07-06T01:04:00",
+        "capacity": 12,
+        "place": "Sala del universo observable",
+        "personal": {},
+        "objects": {
+            "Telescopio Principal": 1,
+            "Mapas Estelares": 1,
+            "Planetas a escala": 1
+        },
+        "password": "aeiou"
     }
 ]

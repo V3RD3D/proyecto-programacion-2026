@@ -18,6 +18,8 @@ def Adder(event, events):
 
     if event.init.time() < apertura or event.end.time() > cierre:
         raise ValueError("El museo solo está abierto de 9:00 AM a 9:00 PM")
+    elif event.init.time() > event.end.time():
+        raise ValueError("revisa el horario de inicio y de fin ")
     
     #verificar la capacidad 
     if event.capacity > event.place.capacity:
